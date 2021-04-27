@@ -69,11 +69,31 @@ def consultar():
 def deletar():
     nome = str(clientesfit.lineEdit.text())
     clientesfit.lineEdit.setText("")
-    clientesfit.close()
+
     cur = conector.cursor()
     cur.execute("DELETE FROM clientes WHERE nome = %s", (nome,))
+    cur.execute("SELECT*FROM clientes")
     conector.commit()
+    dado = cur.fetchall()
+    clientesfit.tableWidget.setColumnCount(5)
+    clientesfit.tableWidget.setRowCount(len(dado))
 
+    for i in range(0, len(dado)):
+        for j in range(0, 5):
+            clientesfit.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(dado[i][j])))
+
+
+def atualizar():
+    cur = conector.cursor()
+
+    cur.execute("SELECT*FROM clientes")
+    dado = cur.fetchall()
+    clientesfit.tableWidget.setColumnCount(5)
+    clientesfit.tableWidget.setRowCount(len(dado))
+
+    for i in range(0, len(dado)):
+        for j in range(0, 5):
+            clientesfit.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(dado[i][j])))
 
 
 
@@ -95,6 +115,7 @@ cadastrofit.pushButton_2.clicked.connect(voltar)
 clientesfit.pushButton.clicked.connect(consultar)
 clientesfit.pushButton_2.clicked.connect(voltar)
 clientesfit.pushButton_3.clicked.connect(deletar)
+clientesfit.pushButton_4.clicked.connect(atualizar)
 
 
 fit.show()
