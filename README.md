@@ -10,6 +10,9 @@
 ## 🔖&nbsp; Sobre
 
 Projetos desenvolvidos em python para fins de estudo.
+- O projeto calcIP utiliza o endereço IP e prefixo para detalhar as informações de rede.
+- O projeto Cálculo de crédito bancário realiza uma simulação de emprestimo de acordo com a margem de renda do cliente. 
+- O projeto de cadastro de clientes utiliza o banco de dados em SQL para inserir, consultar e deletar os dados do cliente, possibilitando um melhor controle da empresa.
 
 
 <p align="center">
@@ -60,7 +63,7 @@ Projetos desenvolvidos em python para fins de estudo.
 
 ## 🚀 Tecnologias utilizadas
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias
+Os projetos foram desenvolvidos utilizando as seguintes tecnologias:
 
 - [PyQt5](https://pypi.org/project/PyQt5/)
 - [Qt Designer](https://doc.qt.io/qt-5/qtdesigner-manual.html)
